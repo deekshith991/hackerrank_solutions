@@ -8,9 +8,12 @@
 
         MY FUNCTIONS : 1. solve(n)
                     2. prime(i)
+       
+       largestprime is dsomeones approach
 */
 
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 bool prime(int n){
@@ -24,10 +27,29 @@ bool prime(int n){
 int solve(int n){
     
     for( int i = n ; i>1 ; i-- ){
-        if(n%i == 0){
-            if(prime(i))
-                return i;
+        if(n%i == 0){       // first first find the highest factor
+            if(prime(i))    // Then check if it is prime
+                return i;   // if yes return it
         }
+    }
+    return 0;
+}
+int largestprime(long n){
+while (n % 2 == 0)
+    n /= 2;
+
+    if (n == 1)
+        cout << 2 << "\n";
+    else
+    {
+        for (long int i = 3; i <= sqrt(n); i += 2)
+        {
+            while (n % i == 0)
+                n /= i;
+            if (n == 1)
+                cout << i << "\n";
+        }
+         if (n!=1)    cout<<n<<"\n";
     }
     return 0;
 }
