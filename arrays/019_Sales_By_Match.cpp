@@ -32,7 +32,7 @@ int main(){
 
 	vector<int> vec={1,3,45,65,8822,1,3,33,3,45,45,65};
 
-	cout << sockMerchant(vec,vec.size());
+	cout << sockMerchant(vec.size(),vec);
 
 	return 0;
 }
